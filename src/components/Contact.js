@@ -41,7 +41,7 @@ export default class Contact extends Component {
         <div className="container mt-5">
           <div className="row d-flex mb-5 contact-info">
             <div className="col-md-12 mb-4">
-              <h2 className="h4">Contact Information</h2>
+              <h2 className="h4">Əlaqə Məlumatları</h2>
             </div>
             <div className="w-100" />
             <div className="col-md-3">

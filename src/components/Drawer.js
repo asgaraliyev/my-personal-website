@@ -109,7 +109,7 @@ export default function MiniDrawer() {
           paper:"#fce130"
         },
         text:{
-          primary:"#fce130"
+          primary:"#000"
         },
         primary: {
           main: "#fce130",
@@ -119,7 +119,7 @@ export default function MiniDrawer() {
         secondary: {
           main: "#000",
           light: "#000",
-          dark: "#c7ac00",
+          dark: "#000",
         },
       },
     }

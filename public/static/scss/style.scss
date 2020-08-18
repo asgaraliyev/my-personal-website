@@ -2515,3 +2515,28 @@ textarea {
 .color-black{
 	color:$black;
 }
+.seven-rem{
+	@media screen and (max-width: 768px) {
+		font-size:0.7rem;
+
+	}
+
+}
+.six-rem{
+	@media screen and (max-width: 768px) {
+		font-size:0.5rem;
+
+	}
+
+}
+.left-side{
+	display: block !important;
+    left: 14px !important;
+    position: absolute;
+    margin-top: 0.3em;
+}
+#skills{
+	.col-md-6{
+		margin: 20px 0px;
+	}
+}

@@ -11844,4 +11844,27 @@ textarea {
 .color-black {
   color: #121212;
 }
+
+@media screen and (max-width: 768px) {
+  .seven-rem {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .six-rem {
+    font-size: 0.5rem;
+  }
+}
+
+.left-side {
+  display: block !important;
+  left: 14px !important;
+  position: absolute;
+  margin-top: 0.3em;
+}
+
+#skills .col-md-6 {
+  margin: 20px 0px;
+}
 /*# sourceMappingURL=style.css.map */

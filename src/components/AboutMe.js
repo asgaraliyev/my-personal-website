@@ -8,7 +8,7 @@ export default class AboutMe extends Component {
               <div className="row d-flex my-5" data-scrollax-parent="true">
                 <div
                   className="col-md-4 author-img"
-                  style={{ backgroundImage: "burabaxilmalidi" }}
+                  style={{ backgroundImage: "url("+`https://upload.wikimedia.org/wikipedia/commons/c/ce/G-Eazy_-_Openair_Frauenfeld_2019_40.jpg` +")"}}
                   data-scrollax=" properties: { translateY: '-70%'}"
                 />
                 <div className="col-md-2" />
@@ -89,23 +89,23 @@ export default class AboutMe extends Component {
                     <h2 className="mb-4">Təcrübələrim</h2>
                     <div className="exp-wrap py-4">
                       <div className="desc">
-                        <h4>
+                        <h4 className="seven-rem">
                           {" "}
                           Web Developer <span> - Buta Education</span>{" "}
                         </h4>
                       </div>
                       <div className="year">
-                        <p>2020</p>
+                        <p className="seven-rem">2020</p>
                       </div>
                     </div>
                     <div className="exp-wrap py-4">
                       <div className="desc">
-                        <h4>
+                        <h4 className="seven-rem">
                           Frontend Developer<span> - Vergul.az</span>{" "}
                         </h4>
                       </div>
                       <div className="year">
-                        <p>2019</p>
+                        <p className="seven-rem">2019</p>
                       </div>
                     </div>
                   </div>
@@ -113,25 +113,25 @@ export default class AboutMe extends Component {
                     <h2 className="mb-4">Təhsil</h2>
                     <div className="exp-wrap py-4">
                       <div className="desc">
-                        <h4>
+                        <h4 className="seven-rem">
                           Bakalavr<span> - Qərbi Kaspi Üniversiteti</span>{" "}
                         </h4>
-                        <p className="location">Azerbaycan - Bakı</p>
+                        <p className="location six-rem">Azerbaycan - Bakı</p>
                       </div>
                       <div className="year">
-                        <p>2018 - Davam edir</p>
+                        <p className="seven-rem">2018 - Davam edir</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="row mt-5 flex-column ftco-animate">
+              <div id="skills" className="row mt-5 flex-column ftco-animate">
                 <div className="col-md-8">
                   <h2 className="mb-4">Bacarıqlarım</h2>
                 </div>
                 <div className="col-md-6 animate-box">
                   <div className="progress-wrap">
-                    <h4>Python</h4>
+                    <h4 className="left-side" >Python</h4>
                     <div className="progress">
                       <div
                         className="progress-bar color-1"
@@ -151,7 +151,7 @@ export default class AboutMe extends Component {
                   data-animate-effect="fadeInRight"
                 >
                   <div className="progress-wrap">
-                    <h4>jQuery</h4>
+                    <h4 className="left-side">jQuery</h4>
                     <div className="progress">
                       <div
                         className="progress-bar color-1"
@@ -168,7 +168,7 @@ export default class AboutMe extends Component {
                 </div>
                 <div className="col-md-6 animate-box">
                   <div className="progress-wrap">
-                    <h4>Flutter</h4>
+                    <h4 className="left-side">Flutter</h4>
                     <div className="progress">
                       <div
                         className="progress-bar color-1"
@@ -188,7 +188,7 @@ export default class AboutMe extends Component {
                   data-animate-effect="fadeInRight"
                 >
                   <div className="progress-wrap">
-                    <h4>SCSS</h4>
+                    <h4 className="left-side" >SCSS</h4>
                     <div className="progress">
                       <div
                         className="progress-bar color-1"
@@ -205,7 +205,7 @@ export default class AboutMe extends Component {
                 </div>
                 <div className="col-md-6 animate-box">
                   <div className="progress-wrap">
-                    <h4>Selenium</h4>
+                    <h4 className="left-side">Selenium</h4>
                     <div className="progress">
                       <div
                         className="progress-bar color-1"
@@ -225,7 +225,7 @@ export default class AboutMe extends Component {
                   data-animate-effect="fadeInRight"
                 >
                   <div className="progress-wrap">
-                    <h4>OpenCV</h4>
+                    <h4 className="left-side">OpenCV</h4>
                     <div className="progress">
                       <div
                         className="progress-bar color-1"

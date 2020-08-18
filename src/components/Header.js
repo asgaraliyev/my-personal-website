@@ -71,6 +71,7 @@ export default class Header extends Component {
     }
   }
   render() {
+      console.log("sea");
     const theme = createMuiTheme(
       {
         palette: {
