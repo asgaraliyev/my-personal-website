@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import butaeducation from "../photos/butaeducation.png";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import {
   Card,
   CardHeader,

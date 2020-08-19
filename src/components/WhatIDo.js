@@ -7,8 +7,8 @@ export default class WhatIDo extends Component {
             <div className="container mt-5">
               <div className="row justify-content-center mb-5 pb-5">
                 <div className="col-md-7 text-center heading-section ftco-animate">
-                  <span>Mən nə edirəm?</span>
-                  <h2>Mənim xidmətlərim</h2>
+                  <span className="orange-is-new-black">Nə edirəm?</span>
+                  <h2>Xidmətlərim</h2>
                 </div>
               </div>
               <div className="row">

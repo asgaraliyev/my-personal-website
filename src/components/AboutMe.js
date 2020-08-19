@@ -17,7 +17,7 @@ export default class AboutMe extends Component {
                     <h1 className="bold-text">Haqqımda</h1>
                     <div className="p-5">
                       <h2 className="mb-5">Salam mən Əsgər Əliyev</h2>
-                      <p>
+                      <p className="orange-is-new-black">
                         Bakı,Azərbaycanda yaşayıram.Yeni və yüksək
                         texnologiyaları öyrənməyi və araşdırmağı sevirəm.
                       </p>
@@ -45,11 +45,11 @@ export default class AboutMe extends Component {
                       </ul>
                       <h5>Mənimlə əlaqə qurun</h5>
                       <p>
-                        E-Poçt:{" "}
-                        <a href="mailto:burabaxilmalidi">burabaxilmalidi</a>
+                        <span className="white-is-new-black">E-Poçt:{" "}</span>
+                        <a href="mailto:burabaxilmalidi">E-Poçt: burabaxilmalidi</a>
                       </p>
                       <p>
-                        Telefon:{" "}
+                        <span className="white-is-new-black">Telefon:{" "}</span>
                         <a href="tel://burabaxilmalidi">burabaxilmalidi</a>
                       </p>
                     </div>
@@ -64,17 +64,17 @@ export default class AboutMe extends Component {
                       Mən bir Python və Frontend Developer .Mənim üçün əsas olan
                       işlərimi kreativ və analitik düşüncə ilə etməkdir.
                     </h4>
-                    <p>
+                    <p className="orange-is-new-black">
                       Yeniliklərə açığam . Durmadan öyənməyə ve özümü inkişaf
                       etdirməyə davam edirəm.
                     </p>
                     <div className="row my-5">
                       <div className="col-md-6">
-                        <p>
-                          <strong>Adım:</strong> <span>Əsgər Əliyev</span>
+                        <p >
+                          <strong>Adım:</strong> <span className="orange-is-new-black">Əsgər Əliyev</span>
                         </p>
                         <p>
-                          <strong>Ünvan:</strong> <span>burabaxilmalidi</span>
+                          <strong>Ünvan:</strong> <span className="orange-is-new-black">burabaxilmalidi</span>
                         </p>
                         <p>
                           <strong>Telefonum:</strong>{" "}
@@ -95,17 +95,17 @@ export default class AboutMe extends Component {
                         </h4>
                       </div>
                       <div className="year">
-                        <p className="seven-rem">2020</p>
+                        <p className="seven-rem orange-is-new-black">2020</p>
                       </div>
                     </div>
                     <div className="exp-wrap py-4">
                       <div className="desc">
-                        <h4 className="seven-rem">
+                        <h4 className="seven-rem ">
                           Frontend Developer<span> - Vergul.az</span>{" "}
                         </h4>
                       </div>
                       <div className="year">
-                        <p className="seven-rem">2019</p>
+                        <p className="seven-rem orange-is-new-black">2019</p>
                       </div>
                     </div>
                   </div>
@@ -116,10 +116,10 @@ export default class AboutMe extends Component {
                         <h4 className="seven-rem">
                           Bakalavr<span> - Qərbi Kaspi Üniversiteti</span>{" "}
                         </h4>
-                        <p className="location six-rem">Azerbaycan - Bakı</p>
+                        <p className="location six-rem orange-is-new-black">Azerbaycan - Bakı</p>
                       </div>
                       <div className="year">
-                        <p className="seven-rem">2018 - Davam edir</p>
+                        <p className="seven-rem orange-is-new-black">2018 - Davam edir</p>
                       </div>
                     </div>
                   </div>

@@ -13,7 +13,7 @@ export default class Coof extends Component {
                 <div className="col-md-5 col-sm-5 counter-wrap ftco-animate">
                   <div className="block-18">
                     <div className="text">
-                      <span className="ftco-label">Müştərilər</span>
+                      <span className="ftco-label white-is-new-black" >Müştərilər</span>
                       <strong className="number" data-number={10}>
                         0
                       </strong>
@@ -25,7 +25,7 @@ export default class Coof extends Component {
                 <div className="col-md-5 col-sm-5 counter-wrap ftco-animate">
                   <div className="block-18">
                     <div className="text">
-                      <span className="ftco-label">Bitmiş Layihələr</span>
+                      <span className="ftco-label white-is-new-black">Bitmiş Layihələr</span>
                       <strong className="number" data-number={20}>
                         0
                       </strong>
@@ -37,7 +37,7 @@ export default class Coof extends Component {
                 <div className="col-md-5 counter-wrap ftco-animate">
                   <div className="block-18">
                     <div className="text">
-                      <span className="ftco-label">Bitirilmiş Kofelər</span>
+                      <span className="ftco-label white-is-new-black">Bitirilmiş Kofelər</span>
                       <strong className="number" data-number={567}>
                         0
                       </strong>

@@ -1,15 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Nav from "./components/Nav";
 import Interaction from "./components/Interaction";
 import Coof from "./components/Coof";
-import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import WhatIDo from "./components/WhatIDo";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
-import LangWindow from "./components/LangWindow";
 import Footer from "./components/Footer";
 import MiniDrawer from "./components/Drawer";
 

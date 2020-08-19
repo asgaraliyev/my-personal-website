@@ -7,7 +7,7 @@ export default class Portfolio extends Component {
             <div className="container">
               <div className="row justify-content-center mb-5 pb-5">
                 <div className="col-md-7 text-center heading-section ftco-animate">
-                  <span>Portfolio</span>
+                  <span className="orange-is-new-black">Portfolio</span>
                   <h2>Mənim işlərimə göz gəzdirin ! </h2>
                 </div>
               </div>

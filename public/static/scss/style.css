@@ -11867,4 +11867,12 @@ textarea {
 #skills .col-md-6 {
   margin: 20px 0px;
 }
+
+.orange-is-new-black {
+  color: #fce130 !important;
+}
+
+.white-is-new-black {
+  color: #fff !important;
+}
 /*# sourceMappingURL=style.css.map */
