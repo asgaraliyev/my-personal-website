@@ -1,0 +1,56 @@
+$white: #fff;
+$black: #121212;
+$primary: #fce130;
+
+.work-card{
+   .MuiPaper-root{
+    background: rgb(252,225,48);
+    background: linear-gradient(45deg, rgba(252,225,48,1) 0%, rgba(255,253,237,1) 100%);
+    box-shadow: 0px 0px 5px $primary;
+   }
+}
+
+#work-card{
+   .work-avatar{
+      width: 7rem;
+      height: 7rem;
+      @media only screen and (max-width: 600px) {
+         width:4rem;
+         height: 4rem;
+       }
+   }
+   .work-name{
+      
+         *{
+            font-size: 1.5rem!important;
+            @media only screen and (max-width: 600px) {
+               font-size:1rem!important;
+             }
+             @media only screen and (max-width: 500px) {
+               font-size:0.8rem!important;
+             }
+
+         }
+         
+   }
+   .work-content{
+      
+         font-size: 1.1rem!important;
+         @media only screen and (max-width: 600px) {
+            font-size:0.7rem!important;
+          }
+          @media only screen and (max-width: 500px) {
+            font-size:0.3rem!important;
+          }
+      
+}
+}
+
+.txt-color-black{
+  *{
+   color:$black!important;
+  }
+
+}
+#lang-select{
+}

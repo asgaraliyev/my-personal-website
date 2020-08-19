@@ -166,7 +166,7 @@ body {
 		position: fixed;
 		height: 100%;
 		width: 100%;
-	}
+	}	
 
 	.KW_progressContainer {
 		left: 0;
@@ -180,11 +180,10 @@ body {
 		content: "";
 		display: table;
 		table-layout: fixed;
-		z-index: 999;
+		z-index: 9999;
 	}
 
 	.KW_progressBar {
-		width: 0%;
 		float: left;
 		height: 100%;
 		z-index: 99;

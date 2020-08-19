@@ -9590,11 +9590,10 @@ body .KW_progressContainer {
   content: "";
   display: table;
   table-layout: fixed;
-  z-index: 999;
+  z-index: 9999;
 }
 
 body .KW_progressBar {
-  width: 0%;
   float: left;
   height: 100%;
   z-index: 99;

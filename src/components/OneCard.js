@@ -38,21 +38,26 @@ export default class OneCard extends Component {
         },
       },
     });
+    const { work } = this.props;
 
     return (
       <MuiThemeProvider theme={themeColors}>
-        <br></br>
-        <br></br>
         <div
-          className="block-3 d-md-flex ftco-animate"
+          id="work-card"
+          className="block-3 d-md-flex ftco-animate work-card"
           data-scrollax-parent="true"
         >
-          <Card>
+          <Card
+            style={{
+              margin: "10px  0px",
+            }}
+          >
             <CardHeader
               avatar={
                 <Avatar
+                  className="work-avatar"
                   aria-label="recipe"
-                  src="http://www.butaeducation.com/static/img/logos/icon.webp"
+                  src={work.photo}
                 ></Avatar>
               }
               action={
@@ -60,17 +65,22 @@ export default class OneCard extends Component {
                   <MoreVertIcon />
                 </IconButton>
               }
-              title="Buta Education Xaricdə Təhsil Mərkəzi"
-              subheader="İyul 2020"
+              title={work.employer}
+              className="work-name"
+              subheader={work.time}
             />
             <CardMedia
-              style={{ backgroundImage: `url(${butaeducation})` ,width:"100%",height:"200px"}}
-              title="Paella dish"
+              style={{
+                backgroundImage: `url(${work.photos[0]})`,
+                width: "100%",
+                height: "200px",
+              }}
+              
+              title={work.employer}
             />
             <CardContent>
-              <Typography variant="body2" component="p">
-              Buta Education şirkəti 2015-ci ildən bəri tələbələrin xaricdə təhsil almasının təşkili xidmətini göstərir. 
-
+              <Typography variant="body2"  className="work-content" component="p">
+                {work.workContent}
               </Typography>
             </CardContent>
             <CardActions disableSpacing>

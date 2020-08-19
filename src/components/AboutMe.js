@@ -131,11 +131,9 @@ export default class AboutMe extends Component {
                 </div>
                 <div className="col-md-6 animate-box">
                   <div className="progress-wrap">
-                    <h4 className="left-side" >Python</h4>
+                    <h4  className="left-side" >Python</h4>
                     <div className="progress">
-                      <div
-                        className="progress-bar color-1"
-                        role="progressbar"
+                      <div className="progress-bar color-1" role="progressbar"
                         aria-valuenow={75}
                         aria-valuemin={0}
                         aria-valuemax={100}

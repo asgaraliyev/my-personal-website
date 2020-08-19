@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.work-card .MuiPaper-root {
+  background: #fce130;
+  background: linear-gradient(45deg, #fce130 0%, #fffded 100%);
+  -webkit-box-shadow: 0px 0px 5px #fce130;
+          box-shadow: 0px 0px 5px #fce130;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#work-card .work-avatar {
+  width: 7rem;
+  height: 7rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 600px) {
+  #work-card .work-avatar {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#work-card .work-name * {
+  font-size: 1.5rem !important;
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (max-width: 600px) {
+  #work-card .work-name * {
+    font-size: 1rem !important;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 500px) {
+  #work-card .work-name * {
+    font-size: 0.8rem !important;
   }
 }
+
+#work-card .work-content {
+  font-size: 1.1rem !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #work-card .work-content {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #work-card .work-content {
+    font-size: 0.3rem !important;
+  }
+}
+
+.txt-color-black * {
+  color: #121212 !important;
+}
+/*# sourceMappingURL=App.css.map */
