@@ -9458,7 +9458,7 @@ body {
 body:after {
   -webkit-animation: roll-in-blurred-right 2s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: roll-in-blurred-right 2s cubic-bezier(0.23, 1, 0.32, 1) both;
-  background: #171717;
+  background: #17171791;
   position: fixed;
   top: -150px;
   right: -50px;
@@ -9482,7 +9482,7 @@ body:after {
 body:before {
   -webkit-animation: roll-in-blurred-left 2s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: roll-in-blurred-left 2s cubic-bezier(0.23, 1, 0.32, 1) both;
-  background: #171717;
+  background: #17171791;
   position: fixed;
   top: 500px;
   left: -100px;
@@ -10395,7 +10395,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
   right: 0;
   bottom: 0;
   font-weight: 700 !important;
-  color: rgba(255, 255, 255, 0.08);
+  color: #fce13075;
   text-transform: uppercase;
 }
 
@@ -10448,7 +10448,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 }
 
 .exp-wrap .desc h4 span {
-  color: #8c8c8c;
+  color: #fce130;
   font-weight: 300;
 }
 
@@ -10506,7 +10506,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
   position: absolute;
   top: -34px;
   right: 0;
-  color: #6c757d;
+  color: #fff;
 }
 
 .progress-bar.color-1 {

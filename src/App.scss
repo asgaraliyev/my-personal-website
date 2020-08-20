@@ -2,6 +2,11 @@ $white: #fff;
 $black: #121212;
 $primary: #fce130;
 
+body{
+  background: url("./photos/bodyBackground.png") !important;
+  background-size: 550px!important;
+  
+}
 .work-card{
    .MuiPaper-root{
     background: rgb(252,225,48);

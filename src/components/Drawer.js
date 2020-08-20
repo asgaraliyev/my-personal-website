@@ -20,7 +20,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-
+import profilePhoto from '../photos/profilePhoto.jpg'
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -202,7 +202,7 @@ export default function MiniDrawer() {
               <Avatar
                 style={{ width: "70px", height: "70px" }}
                 alt="Travis Howard"
-                src="https://www.rap-up.com/app/uploads/2020/05/g-eazy-yellow.jpg"
+                src={profilePhoto}
               />
             </Grid>
             <Grid style={{ flex: 1, fontSize: "1.5rem" }}>

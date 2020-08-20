@@ -8,6 +8,7 @@ sans-serif;
 $white: #fff;
 $black: #121212;
 $primary: #fce130;
+$transYellow:#fce13075;
 
 html {
 	// overflow-x: hidden;
@@ -38,7 +39,7 @@ body {
 	&:after {
 		-webkit-animation: roll-in-blurred-right 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 		animation: roll-in-blurred-right 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-		background: #171717;
+		background: #17171791;
 		position: fixed;
 		top: -150px;
 		right: -50px;
@@ -65,7 +66,7 @@ body {
 	&:before {
 		-webkit-animation: roll-in-blurred-left 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 		animation: roll-in-blurred-left 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-		background: #171717;
+		background: #17171791;
 		position: fixed;
 		top: 500px;
 		left: -100px;
@@ -1012,7 +1013,7 @@ header {
 			right: 0;
 			bottom: 0;
 			font-weight: 700 !important;
-			color: rgba(255, 255, 255, .08);
+			color: $transYellow;
 			text-transform: uppercase;
 
 			@include media-breakpoint-up(lg) {
@@ -1062,7 +1063,7 @@ header {
 
 		h4 {
 			span {
-				color: darken($white, 45%);
+				color: $primary;
 				font-weight: 300;
 			}
 		}
@@ -1122,7 +1123,7 @@ header {
 		position: absolute;
 		top: -34px;
 		right: 0;
-		color: $secondary;
+		color: $white;
 	}
 
 	&.color-1 {
