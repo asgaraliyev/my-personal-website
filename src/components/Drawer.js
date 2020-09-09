@@ -20,16 +20,20 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import profilePhoto from '../photos/profilePhoto.jpg'
+import profilePhoto from "../photos/profilePhoto.jpg";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
+import { useLocation } from "react-router-dom";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
+import { Link } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Alert from "@material-ui/lab/Alert";
+import { CSSTransition } from 'react-transition-group';
 
 const drawerWidth = 240;
 
@@ -95,8 +99,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer(props) {
   const [langDialog, changeLangDialog] = React.useState(false);
+  const [loginDialog, LoginDialog] = React.useState(false);
+  const [loginAlert, chnageLoginAlert] = React.useState(false);
+  const [username, changeUsername] = React.useState("");
+  const [password, changePassword] = React.useState("");
 
   const classes = useStyles();
   const theme = useTheme();
@@ -105,10 +113,7 @@ export default function MiniDrawer() {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-  const changeDialog = () => {
-    changeLangDialog(!langDialog);
-    handleDrawerClose();
-  };
+
   const langChanged = () => {
     console.log("sea");
   };
@@ -116,6 +121,35 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
+  const changeDialog = () => {
+    changeLangDialog(!langDialog);
+    // handleDrawerClose();
+  };
+
+  const changeLoginDialog = () => {
+    LoginDialog(!loginDialog);
+    // handleDrawerClose();
+  };
+  const usernameOnChange = (e) => {
+    changeUsername(e.target.value)
+  }
+  const passwordOnChange = (e) => {
+    changePassword(e.target.value)
+  }
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  const submitAdminLogin =  async (e)  =>  {
+    console.log(username,password)
+    if (username=="esger2048" && password=="esger2048"){
+      changeLoginDialog()
+    }else{
+      chnageLoginAlert(true)
+      await sleep(3000);
+      chnageLoginAlert(false)
+      
+    }
+  }
   const themeColors = createMuiTheme({
     palette: {
       common: {
@@ -139,8 +173,22 @@ export default function MiniDrawer() {
       },
     },
   });
+ 
+
   return (
     <MuiThemeProvider theme={themeColors}>
+        <CSSTransition
+        in={loginAlert}
+        timeout={3000}
+        classNames="alert"
+        unmountOnExit
+      >
+        <div id="login-alert">
+        <Alert id="middle" variant="filled" severity="error">
+          Daxil edilən məlumatlar yanlışdır !
+        </Alert>
+      </div>
+      </CSSTransition>
       <Dialog
         onClose={changeLangDialog}
         aria-labelledby="customized-dialog-title"
@@ -150,7 +198,11 @@ export default function MiniDrawer() {
           {"Dili dəyişdirmək istəyirsən?"}
         </DialogTitle>
         <DialogContent>
-          <FormControl style={{width:"100%"}}  id="lang-select" variant="outlined">
+          <FormControl
+            style={{ width: "100%" }}
+            id="lang-select"
+            variant="outlined"
+          >
             <InputLabel htmlFor="outlined-age-native-simple">Dil</InputLabel>
             <Select
               native
@@ -175,8 +227,51 @@ export default function MiniDrawer() {
         </DialogActions>
       </Dialog>
 
+      <Dialog
+        onClose={changeLoginDialog}
+        aria-labelledby="customized-dialog-title"
+        open={loginDialog}
+      >
+        <DialogTitle className="txt-color-black" id="alert-dialog-slide-title">
+          {"Daxil Olun"}
+        </DialogTitle>
+        <DialogContent>
+          <FormControl
+            style={{ width: "100%" }}
+            id="lang-select"
+            variant="outlined"
+          >
+            <TextField
+            onChange={usernameOnChange}
+              id="outlined-textarea"
+              label="Istifadəçi adı"
+              placeholder="İstfidəçi adını yazın..."
+              multiline
+              variant="outlined"
+            />
+            <br></br>
+            <br></br>
+            <TextField
+            onChange={passwordOnChange}
+              id="outlined-textarea"
+              label="Şifrə"
+              placeholder="Şifrəni yazın..."
+              multiline
+              variant="outlined"
+            />
+          </FormControl>
+        </DialogContent>
+
+        <DialogActions>
+          <Button onClick={submitAdminLogin}  autoFocus >
+            Daxil ol
+          </Button>
+        </DialogActions>
+      </Dialog>
+
       <div className={classes.root}>
         <CssBaseline />
+
         <AppBar
           color="primary"
           position="fixed"
@@ -235,40 +330,77 @@ export default function MiniDrawer() {
           </div>
           <Divider />
           <br></br>
-          <List>
-            {["Haqqımda", "Xidmətlərim", "Portifiliom", "Əlaqə"].map(
-              (text, index) => (
-                <ListItem button key={text}>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText className="color-black" primary={text} />
-                </ListItem>
-              )
-            )}
-          </List>
-          <Divider />
-          <List>
-            {["Mənim CV-im", "Dil"].map((text, index) => (
-              <div>
-                {text === "Dil" ? (
-                  <ListItem onClick={changeDialog} button key={text}>
-                    <ListItemIcon>
-                      <LanguageIcon />
-                    </ListItemIcon>
-                    <ListItemText className="color-black" primary={text} />
-                  </ListItem>
-                ) : (
-                  <ListItem button key={text}>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText className="color-black" primary={text} />
-                  </ListItem>
-                )}
-              </div>
-            ))}
-          </List>
+          <div>
+            <List>
+              <ListItem button onClick="#aboutme" key={"Haqqımda"}>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <a href="#aboutme">
+                  <ListItemText className="color-black" primary={"Haqqımda"} />
+                </a>
+              </ListItem>
+              <ListItem button key={"Xidmətlər"}>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <a href="#what-i-do">
+                  <ListItemText className="color-black" primary={"Xidmətlər"} />
+                </a>
+              </ListItem>
+              <ListItem button key={"Portfolio"}>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <a href="#portfolio">
+                  <ListItemText className="color-black" primary={"Portfolio"} />
+                </a>
+              </ListItem>
+              <ListItem button key={"Bloglar"}>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText className="color-black" primary={"Bloglar"} />
+              </ListItem>
+              <ListItem button key={"Əlaqə"}>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <a href="#contact">
+                  <ListItemText className="color-black" primary={"Əlaqə"} />
+                </a>
+              </ListItem>
+            </List>
+            <Divider />
+            <List>
+              <ListItem onClick={changeDialog} button key={"Dili Dəyisdir"}>
+                <ListItemIcon>
+                  <LanguageIcon />
+                </ListItemIcon>
+                <ListItemText
+                  className="color-black"
+                  primary={"Dili Dəyisdir"}
+                />
+              </ListItem>
+              <ListItem button key={"Mənim CV-im"}>
+                <ListItemIcon>
+                  <MailIcon />
+                </ListItemIcon>
+                <ListItemText className="color-black" primary={"Mənim CV-im"} />
+              </ListItem>
+              <ListItem onClick={changeLoginDialog} button key={"Admin Panel"}>
+                <ListItemIcon>
+                  <MailIcon />
+                </ListItemIcon>
+                <Link>
+                  <ListItemText
+                    className="color-black"
+                    primary={"Admin Panel"}
+                  />
+                </Link>
+              </ListItem>
+            </List>
+          </div>
         </Drawer>
       </div>
     </MuiThemeProvider>

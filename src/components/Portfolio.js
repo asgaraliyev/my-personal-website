@@ -3,7 +3,7 @@ import Cards from './Cards'
 export default class Portfolio extends Component {
     render() {
         return (
-            <section className="ftco-section">
+            <section id="portfolio" className="ftco-section">
             <div className="container">
               <div className="row justify-content-center mb-5 pb-5">
                 <div className="col-md-7 text-center heading-section ftco-animate">

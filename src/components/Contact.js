@@ -36,7 +36,7 @@ export default class Contact extends Component {
     console.log(theme);
     return (
       <MuiThemeProvider theme={theme}>
-      <section className="ftco-section contact-section">
+      <section id="contact" className="ftco-section contact-section">
         <div className="container mt-5">
           <div className="row d-flex mb-5 contact-info">
             <div className="col-md-12 mb-4">
@@ -86,7 +86,7 @@ export default class Contact extends Component {
                 <div className="form-group">
                   <div className="col-3 input-effect">
                     <TextField
-
+                      type="tel"
                       color="secondary"
                       className="contact-inputs"
                       id="outlined-basic"

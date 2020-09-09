@@ -2,60 +2,111 @@ $white: #fff;
 $black: #121212;
 $primary: #fce130;
 
-body{
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   background: url("./photos/bodyBackground.png") !important;
-  background-size: 550px!important;
-  
+  background-size: 550px !important;
+
 }
-.work-card{
-   .MuiPaper-root{
-    background: rgb(252,225,48);
-    background: linear-gradient(45deg, rgba(252,225,48,1) 0%, rgba(255,253,237,1) 100%);
+
+.work-card {
+  .MuiPaper-root {
+    background: rgb(252, 225, 48);
+    background: linear-gradient(45deg, rgba(252, 225, 48, 1) 0%, rgba(255, 253, 237, 1) 100%);
     box-shadow: 0px 0px 5px $primary;
-   }
+  }
 }
 
-#work-card{
-   .work-avatar{
-      width: 7rem;
-      height: 7rem;
-      @media only screen and (max-width: 600px) {
-         width:4rem;
-         height: 4rem;
-       }
-   }
-   .work-name{
-      
-         *{
-            font-size: 1.5rem!important;
-            @media only screen and (max-width: 600px) {
-               font-size:1rem!important;
-             }
-             @media only screen and (max-width: 500px) {
-               font-size:0.8rem!important;
-             }
+#work-card {
+  .work-avatar {
+    width: 7rem;
+    height: 7rem;
 
-         }
-         
-   }
-   .work-content{
-      
-         font-size: 1.1rem!important;
-         @media only screen and (max-width: 600px) {
-            font-size:0.7rem!important;
-          }
-          @media only screen and (max-width: 500px) {
-            font-size:0.3rem!important;
-          }
-      
-}
-}
-
-.txt-color-black{
-  *{
-   color:$black!important;
+    @media only screen and (max-width: 600px) {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 
+  .work-name {
+    * {
+      font-size: 1.5rem !important;
+
+      @media only screen and (max-width: 600px) {
+        font-size: 1rem !important;
+      }
+
+      @media only screen and (max-width: 500px) {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+
+  .work-content {
+
+    font-size: 1.1rem !important;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 0.7rem !important;
+    }
+
+    @media only screen and (max-width: 500px) {
+      font-size: 0.6rem !important;
+    }
+  }
 }
-#lang-select{
+
+.txt-color-black {
+  * {
+    color: $black !important;
+  }
+}
+
+#lang-select {}
+
+#login-admin {
+  width: 100%;
+  height: 100vh;
+  padding: 112px 3% 10px 3%;
+
+  .login-form {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: #00000081;
+  }
+}
+
+ #login-alert{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  height: 200px;
+  z-index: 9999;
+  justify-content: center;
+  #middle  {
+    position: fixed;
+    width: 80%;
+    margin: 20px 0px;
+  }
+}
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
 }
