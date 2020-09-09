@@ -96,18 +96,12 @@ body {
 
 .alert-enter {
   opacity: 0;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
 }
 
 .alert-enter-active {
   opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 
 .alert-exit {
@@ -116,11 +110,7 @@ body {
 
 .alert-exit-active {
   opacity: 0;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 /*# sourceMappingURL=App.css.map */
