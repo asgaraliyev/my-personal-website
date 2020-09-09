@@ -140,7 +140,6 @@ export default function MiniDrawer(props) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   const submitAdminLogin =  async (e)  =>  {
-    console.log(username,password)
     if (username=="esger2048" && password=="esger2048"){
       changeLoginDialog()
     }else{
@@ -263,6 +262,9 @@ export default function MiniDrawer(props) {
         </DialogContent>
 
         <DialogActions>
+          <Button onClick={changeLoginDialog}  autoFocus >
+            Bağla
+          </Button>
           <Button onClick={submitAdminLogin}  autoFocus >
             Daxil ol
           </Button>
