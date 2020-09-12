@@ -10184,6 +10184,12 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
   position: relative;
 }
 
+@media only screen and (max-width: 600px) {
+  .owl-carousel.home-slider .slider-item .slider-text h1 {
+    font-size: 15px !important;
+  }
+}
+
 @media (max-width: 991.98px) {
   .owl-carousel.home-slider .slider-item .slider-text h1 {
     font-size: 26px;
@@ -10195,6 +10201,12 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
   line-height: 1.5;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (max-width: 600px) {
+  .owl-carousel.home-slider .slider-item .slider-text p {
+    font-size: 10px !important;
+  }
 }
 
 .owl-carousel.home-slider .slider-item .slider-text p a.scroll {
@@ -10462,6 +10474,7 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 
 .progress-wrap {
   margin-bottom: 30px;
+  background: #121212;
 }
 
 .progress-wrap h4 {
@@ -10515,6 +10528,48 @@ header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-bra
 
 .progress-bar.color-1:after {
   background: #fce130;
+}
+
+.from-left-animation[data-scroll="in"] {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  -webkit-transition: 2s ease all;
+  transition: 2s ease all;
+  -webkit-animation: slide-in-bck-left 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bck-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  opacity: 1;
+}
+
+.from-bottom-animation[data-scroll="out"] {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  opacity: 0;
+}
+
+@-webkit-keyframes slide-in-bck-left {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(-400px);
+    transform: translateZ(700px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+    transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bck-left {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(-400px);
+    transform: translateZ(700px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+    transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
 }
 
 .services {

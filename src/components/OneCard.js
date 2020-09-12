@@ -70,17 +70,18 @@ export default class OneCard extends Component {
               subheader={work.time}
             />
             <CardMedia
+              className="work-photo"
               style={{
-                backgroundImage: `url(${work.photos[0]})`,
+                backgroundImage: `url(${butaeducation})`,
                 width: "100%",
-                height: "200px",
               }}
-              
               title={work.employer}
             />
             <CardContent>
               <Typography variant="body2"  className="work-content" component="p">
                 {work.workContent}
+                <br></br>
+               <a href="http://www.butaeducation.com/" target="_blank"> <h5 style={{color:"black"}}>www.butaeducation.com</h5></a>
               </Typography>
             </CardContent>
             <CardActions disableSpacing>

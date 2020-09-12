@@ -33,7 +33,9 @@ import Select from "@material-ui/core/Select";
 import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Alert from "@material-ui/lab/Alert";
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from "react-transition-group";
+import { FormattedMessage } from "react-intl";
+import resume from "../photos/resume.pdf";
 
 const drawerWidth = 240;
 
@@ -114,8 +116,10 @@ export default function MiniDrawer(props) {
     setOpen(true);
   };
 
-  const langChanged = () => {
-    console.log("sea");
+  const langChanged = (e) => {
+    localStorage.setItem("lang", e.target.value);
+    changeDialog();
+    window.location.href = "/";
   };
   const handleDrawerClose = () => {
     setOpen(false);
@@ -131,24 +135,23 @@ export default function MiniDrawer(props) {
     // handleDrawerClose();
   };
   const usernameOnChange = (e) => {
-    changeUsername(e.target.value)
-  }
+    changeUsername(e.target.value);
+  };
   const passwordOnChange = (e) => {
-    changePassword(e.target.value)
-  }
+    changePassword(e.target.value);
+  };
   function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
-  const submitAdminLogin =  async (e)  =>  {
-    if (username=="esger2048" && password=="esger2048"){
-      changeLoginDialog()
-    }else{
-      chnageLoginAlert(true)
+  const submitAdminLogin = async (e) => {
+    if (username == "esger2048" && password == "esger2048") {
+      changeLoginDialog();
+    } else {
+      chnageLoginAlert(true);
       await sleep(3000);
-      chnageLoginAlert(false)
-      
+      chnageLoginAlert(false);
     }
-  }
+  };
   const themeColors = createMuiTheme({
     palette: {
       common: {
@@ -172,29 +175,33 @@ export default function MiniDrawer(props) {
       },
     },
   });
- 
 
   return (
     <MuiThemeProvider theme={themeColors}>
-        <CSSTransition
+      <CSSTransition
         in={loginAlert}
         timeout={3000}
         classNames="alert"
         unmountOnExit
       >
         <div id="login-alert">
-        <Alert id="middle" variant="filled" severity="error">
-          Daxil edilən məlumatlar yanlışdır !
-        </Alert>
-      </div>
+          <Alert id="middle" variant="filled" severity="error">
+            Daxil edilən məlumatlar yanlışdır !
+          </Alert>
+        </div>
       </CSSTransition>
       <Dialog
-        onClose={changeLangDialog}
+        onClose={changeDialog}
         aria-labelledby="customized-dialog-title"
         open={langDialog}
       >
         <DialogTitle className="txt-color-black" id="alert-dialog-slide-title">
-          {"Dili dəyişdirmək istəyirsən?"}
+          {
+            <FormattedMessage
+              id="doYouWantToChangeLanguage"
+              defaultMessage="Dili dəyişdirmək istəyirsən?"
+            ></FormattedMessage>
+          }
         </DialogTitle>
         <DialogContent>
           <FormControl
@@ -202,26 +209,34 @@ export default function MiniDrawer(props) {
             id="lang-select"
             variant="outlined"
           >
-            <InputLabel htmlFor="outlined-age-native-simple">Dil</InputLabel>
+            <InputLabel htmlFor="outlined-age-native-simple">
+              <FormattedMessage
+                id="languageWord"
+                defaultMessage="Dil"
+              ></FormattedMessage>
+            </InputLabel>
             <Select
               native
               onChange={langChanged}
               label="Dil"
+              value={localStorage.getItem("lang")}
               inputProps={{
                 name: "dil",
                 id: "outlined-age-native-simple",
               }}
             >
-              <option aria-label="" value="Azərbaycanca" />
-              <option value={"az"}>Azərbaycanca</option>
-              <option value={"en"}>İngiliscə</option>
+              <option value={"Azerbaijan"}>Azerbaijan</option>
+              <option value={"English"}>English</option>
             </Select>
           </FormControl>
         </DialogContent>
 
         <DialogActions>
           <Button autoFocus onClick={changeDialog}>
-            Dəyişdir
+            <FormattedMessage
+              id="close"
+              defaultMessage="Bağla"
+            ></FormattedMessage>
           </Button>
         </DialogActions>
       </Dialog>
@@ -241,20 +256,30 @@ export default function MiniDrawer(props) {
             variant="outlined"
           >
             <TextField
-            onChange={usernameOnChange}
+              onChange={usernameOnChange}
               id="outlined-textarea"
-              label="Istifadəçi adı"
-              placeholder="İstfidəçi adını yazın..."
+              label={
+                <FormattedMessage
+                  id="username"
+                  defaultMessage="İstifadəçi adı"
+                ></FormattedMessage>
+              }
+              placeholder="İstifadəçi adı"
               multiline
               variant="outlined"
             />
             <br></br>
             <br></br>
             <TextField
-            onChange={passwordOnChange}
+              onChange={passwordOnChange}
               id="outlined-textarea"
-              label="Şifrə"
-              placeholder="Şifrəni yazın..."
+              label={
+                <FormattedMessage
+                  id="password"
+                  defaultMessage="Şifrə"
+                ></FormattedMessage>
+              }
+              placeholder="Şifrə"
               multiline
               variant="outlined"
             />
@@ -262,10 +287,10 @@ export default function MiniDrawer(props) {
         </DialogContent>
 
         <DialogActions>
-          <Button onClick={changeLoginDialog}  autoFocus >
+          <Button onClick={changeLoginDialog} autoFocus>
             Bağla
           </Button>
-          <Button onClick={submitAdminLogin}  autoFocus >
+          <Button onClick={submitAdminLogin} autoFocus>
             Daxil ol
           </Button>
         </DialogActions>
@@ -295,15 +320,14 @@ export default function MiniDrawer(props) {
                 <MenuIcon />
               </IconButton>
             </Grid>
-            <Grid>
-              <Avatar
-                style={{ width: "70px", height: "70px" }}
-                alt="Travis Howard"
-                src={profilePhoto}
-              />
-            </Grid>
+            <Grid></Grid>
             <Grid style={{ flex: 1, fontSize: "1.5rem" }}>
-              <span>Əsgər Əliyev</span>
+              <span id="my-name">
+                <FormattedMessage
+                  id="myName"
+                  defaultMessage="Asgar Aliyev"
+                ></FormattedMessage>
+              </span>
             </Grid>
           </Toolbar>
         </AppBar>
@@ -334,65 +358,162 @@ export default function MiniDrawer(props) {
           <br></br>
           <div>
             <List>
-              <ListItem button onClick="#aboutme" key={"Haqqımda"}>
-                <ListItemIcon>
-                  <InboxIcon />
+              <ListItem
+                button
+                onClick="#aboutme"
+                key={
+                  <FormattedMessage
+                    id="aboutMeForDrawer"
+                    defaultMessage="Haqqımda"
+                  ></FormattedMessage>
+                }
+              >
+                <ListItemIcon style={{ "font-size": "1.5rem" }}>
+                  <i class="fas fa-address-card"></i>
                 </ListItemIcon>
                 <a href="#aboutme">
-                  <ListItemText className="color-black" primary={"Haqqımda"} />
+                  <ListItemText
+                    className="color-black"
+                    primary={
+                      <FormattedMessage
+                        id="aboutMeForDrawer"
+                        defaultMessage="Haqqımda"
+                      ></FormattedMessage>
+                    }
+                  />
                 </a>
               </ListItem>
-              <ListItem button key={"Xidmətlər"}>
-                <ListItemIcon>
-                  <InboxIcon />
+              <ListItem
+                button
+                key={
+                  <FormattedMessage
+                    id="myServicesForDrawer"
+                    defaultMessage="Xidmətlərim"
+                  ></FormattedMessage>
+                }
+              >
+                <ListItemIcon style={{ "font-size": "1.5rem" }}>
+                  <i class="fas fa-toolbox"></i>
                 </ListItemIcon>
                 <a href="#what-i-do">
-                  <ListItemText className="color-black" primary={"Xidmətlər"} />
+                  <ListItemText
+                    className="color-black"
+                    primary={
+                      <FormattedMessage
+                        id="myServicesForDrawer"
+                        defaultMessage="Xidmətlərim"
+                      ></FormattedMessage>
+                    }
+                  />
                 </a>
               </ListItem>
               <ListItem button key={"Portfolio"}>
-                <ListItemIcon>
-                  <InboxIcon />
+                <ListItemIcon style={{ "font-size": "1.5rem" }}>
+                  <i class="fas fa-briefcase"></i>
                 </ListItemIcon>
                 <a href="#portfolio">
                   <ListItemText className="color-black" primary={"Portfolio"} />
                 </a>
               </ListItem>
-              <ListItem button key={"Bloglar"}>
-                <ListItemIcon>
-                  <InboxIcon />
+              <ListItem
+                button
+                key={
+                  <FormattedMessage
+                    id="blogs"
+                    defaultMessage="Bloqlar"
+                  ></FormattedMessage>
+                }
+              >
+                <ListItemIcon style={{ "font-size": "1.5rem" }}>
+                  <i class="fas fa-rss-square"></i>
                 </ListItemIcon>
-                <ListItemText className="color-black" primary={"Bloglar"} />
+                <ListItemText
+                  className="color-black"
+                  primary={
+                    <FormattedMessage
+                      id="blogs"
+                      defaultMessage="Bloqlar"
+                    ></FormattedMessage>
+                  }
+                />
               </ListItem>
-              <ListItem button key={"Əlaqə"}>
-                <ListItemIcon>
-                  <InboxIcon />
+              <ListItem
+                button
+                key={
+                  <FormattedMessage
+                    id="contact"
+                    defaultMessage="Əlaqə"
+                  ></FormattedMessage>
+                }
+              >
+                <ListItemIcon style={{ "font-size": "1.5rem" }}>
+                  <i class="fas fa-phone-volume"></i>
                 </ListItemIcon>
                 <a href="#contact">
-                  <ListItemText className="color-black" primary={"Əlaqə"} />
+                  <ListItemText
+                    className="color-black"
+                    primary={
+                      <FormattedMessage
+                        id="contact"
+                        defaultMessage="Əlaqə"
+                      ></FormattedMessage>
+                    }
+                  />
                 </a>
               </ListItem>
             </List>
             <Divider />
             <List>
-              <ListItem onClick={changeDialog} button key={"Dili Dəyisdir"}>
+              <ListItem
+                onClick={changeDialog}
+                button
+                key={
+                  <FormattedMessage
+                    id="changeLang"
+                    defaultMessage="Dili Dəyişdir"
+                  ></FormattedMessage>
+                }
+              >
                 <ListItemIcon>
                   <LanguageIcon />
                 </ListItemIcon>
                 <ListItemText
                   className="color-black"
-                  primary={"Dili Dəyisdir"}
+                  primary={
+                    <FormattedMessage
+                      id="changeLang"
+                      defaultMessage="Dili Dəyişdir"
+                    ></FormattedMessage>
+                  }
                 />
               </ListItem>
-              <ListItem button key={"Mənim CV-im"}>
-                <ListItemIcon>
-                  <MailIcon />
+              <ListItem
+                button
+                key={
+                  <FormattedMessage
+                    id="myCv"
+                    defaultMessage="Mənim CV-im"
+                  ></FormattedMessage>
+                }
+              >
+                <ListItemIcon style={{ "font-size": "1.5rem" }}>
+                  <i class="fas fa-file"></i>
                 </ListItemIcon>
-                <ListItemText className="color-black" primary={"Mənim CV-im"} />
+                <a href={resume}>
+                  <ListItemText
+                    className="color-black"
+                    primary={
+                      <FormattedMessage
+                        id="myCv"
+                        defaultMessage="Mənim CV-im"
+                      ></FormattedMessage>
+                    }
+                  />
+                </a>
               </ListItem>
               <ListItem onClick={changeLoginDialog} button key={"Admin Panel"}>
-                <ListItemIcon>
-                  <MailIcon />
+                <ListItemIcon style={{ "font-size": "1.5rem" }}>
+                  <i class="fas fa-user-circle"></i>
                 </ListItemIcon>
                 <Link>
                   <ListItemText

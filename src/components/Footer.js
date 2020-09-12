@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FormattedMessage } from "react-intl";
 
 export default class Footer extends Component {
     render() {
@@ -10,26 +11,32 @@ export default class Footer extends Component {
                   <div className="ftco-footer-widget mb-5">
                     <ul className="ftco-footer-social list-unstyled">
                       <li className="ftco-animate">
-                        <a href="https://wa.me/burabaxilmalidi">
+                        <a href="https://wa.me/+994555174401">
+                          {/* database ile elaqe */}
                           <span className="icon-whatsapp" />
                         </a>
                       </li>
                       <li className="ftco-animate">
-                        <a href="burabaxilmalidi">
+                        <a href="https://www.facebook.com/asgar.aliyev.568/">
+                          {/* database ile elaqe */}
                           <span className="icon-facebook" />
                         </a>
                       </li>
                       <li className="ftco-animate">
-                        <a href="https://www.instagram.com/burabaxilmalidi">
+                        <a href="https://www.instagram.com/asgaraliyev">
+                          {/* database ile elaqe */}
                           <span className="icon-instagram" />
                         </a>
                       </li>
                     </ul>
                   </div>
                   <div className="ftco-footer-widget">
-                    <h2 className="mb-3">Mənimlə əlaqə qurun</h2>
+                    <h2 className="mb-3"><FormattedMessage
+                    id="contactWithMe"
+                    defaultMessage="Mənimlə əlaqə qurun"
+                  ></FormattedMessage></h2>
                     <p className="h3 email">
-                      <a href="#">burabaxilmalidi</a>
+                      <a href="mailto:asgaraliyev2001@gmail.com">asgaraliyev2001@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -38,7 +45,10 @@ export default class Footer extends Component {
                 <div className="col-md-12 text-center">
                   <p>
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                    Bütün hüquqları qorunur ©
+                    <FormattedMessage
+                    id="allRightsReserved"
+                    defaultMessage=" Bütün hüquqları qorunur"
+                  ></FormattedMessage> ©
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   </p>
                 </div>

@@ -1,6 +1,5 @@
 @import 'bootstrap/bootstrap';
 @import 'bootstrap/variables';
-
 $font-primary: 'Poppins',
 Arial,
 sans-serif;
@@ -787,10 +786,13 @@ header {
 					letter-spacing: 10px;
 					display: inline-block;
 					position: relative;
-
+					@media only screen and (max-width: 600px) {
+						font-size: 15px!important;
+					 }
 					@include media-breakpoint-down(md) {
 						font-size: 26px;
 					}
+				
 				}
 
 				p {
@@ -798,7 +800,9 @@ header {
 					line-height: 1.5;
 					font-weight: 300;
 					color: rgba(255, 255, 255, .8);
-
+					@media only screen and (max-width: 600px) {
+						font-size: 10px!important;
+					 }
 					a.scroll {
 						color: rgba(255, 255, 255, .6);
 						font-weight: 400;
@@ -1081,7 +1085,7 @@ header {
 //SKILLS--------------------
 .progress-wrap {
 	margin-bottom: 30px;
-
+	background: $black;
 	h4 {
 		font-size: 20px;
 		margin-bottom: 10px;
@@ -1136,6 +1140,47 @@ header {
 }
 
 
+.from-left-animation[data-scroll="in"] {
+	transition-delay: 1s;
+    transition: 2s ease all;
+    -webkit-animation: slide-in-bck-left 3s cubic-bezier(.25, .46, .45, .94) both;
+    animation: slide-in-bck-left 2s cubic-bezier(.25, .46, .45, .94) both;
+    opacity: 1;
+}
+
+.from-bottom-animation[data-scroll="out"] {
+    transition: 1s ease all;
+    opacity: 0;
+}
+
+
+@-webkit-keyframes slide-in-bck-left {
+    0% {
+        -webkit-transform: translateZ(700px) translateX(-400px);
+        transform: translateZ(700px) translateX(-400px);
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) translateX(0);
+        transform: translateZ(0) translateX(0);
+        opacity: 1
+    }
+}
+
+@keyframes slide-in-bck-left {
+    0% {
+        -webkit-transform: translateZ(700px) translateX(-400px);
+        transform: translateZ(700px) translateX(-400px);
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) translateX(0);
+        transform: translateZ(0) translateX(0);
+        opacity: 1
+    }
+}
 
 
 //SERVICES
@@ -2462,6 +2507,7 @@ textarea {
 
 #contact-form {
 	.contact-inputs {
+		// background: $black;
 		* {
 			font-weight: bolder;
 		}

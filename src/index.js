@@ -4,13 +4,25 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { WorksProvider } from "./Context";
+import { IntlProvider } from "react-intl";
+import { azeri } from "./languages/az";
+import { english } from "./languages/en";
+const local=navigator.language;
+let lang;
+if (localStorage.getItem("lang")=="English"){
+  lang=english
+}else{
+  lang=azeri
+}
 
 ReactDOM.render(
-  <WorksProvider>
+ <IntlProvider locale={local} messages={lang}>
+    <WorksProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </WorksProvider>,
+  </WorksProvider>
+ </IntlProvider>,
   document.getElementById("root")
 );
 

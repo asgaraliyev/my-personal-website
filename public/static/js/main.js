@@ -4,6 +4,7 @@
  });
 
 $(document).ready(function($) {
+	
 	$("#colorlib-page").css({
 		"padding-left":$("#left-menu-container").width()
 	})
@@ -21,7 +22,7 @@ $(document).ready(function($) {
 	// Scrollax
   $.Scrollax();
 
-
+ document.getElementById('hostname').innerHTML=window.location.hostname;
 
   
   var position = $(window).scrollTop(); 
@@ -29,10 +30,8 @@ $(document).ready(function($) {
   $(window).scroll(function() { 
 	  var scroll = $(window).scrollTop(); 
 	  if (scroll > position) { 
-		  console.log('scrollDown'); 
 			$('header').slideUp("slow");
 	  } else { 
-		  console.log('scrollUp'); 
 		  if( !$('body').hasClass('menu-show') ){
 			$('header').slideDown("slow");
 		  }
@@ -226,7 +225,9 @@ $(document).ready(function($) {
 	var pageProgress = function() {
 		$(window).scroll(function() {
 	    var wintop = $(window).scrollTop(), docheight = $('body').height(), winheight = $(window).height();
-	    var totalScroll = (wintop/(docheight-winheight))*100;
+		var totalScroll = (wintop/(docheight-winheight))*100;
+		$("body").attr("data-page-visited",totalScroll)
+		console.log(totalScroll);
 	    $("#progress-bar").css({
 			"width":totalScroll+"%"
 		});
@@ -238,3 +239,9 @@ $(document).ready(function($) {
 
 });
 
+$(document).ready(function($) {
+	ScrollOut({
+        targets: ".skill-bar,.from-bottom-animation",
+      
+    });
+});
