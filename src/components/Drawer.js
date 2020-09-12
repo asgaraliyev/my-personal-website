@@ -186,7 +186,10 @@ export default function MiniDrawer(props) {
       >
         <div id="login-alert">
           <Alert id="middle" variant="filled" severity="error">
-            Daxil edilən məlumatlar yanlışdır !
+            <FormattedMessage
+              id="informationsIsWrong"
+              defaultMessage="Daxil edilən məlumatlar yanlışdır!"
+            ></FormattedMessage>
           </Alert>
         </div>
       </CSSTransition>
@@ -451,15 +454,15 @@ export default function MiniDrawer(props) {
                   <i class="fas fa-phone-volume"></i>
                 </ListItemIcon>
                 <a href="#contact" className="link">
-                <ListItemText
-                  className="color-black"
-                  primary={
-                    <FormattedMessage
-                      id="contact"
-                      defaultMessage="Əlaqə"
-                    ></FormattedMessage>
-                  }
-                />
+                  <ListItemText
+                    className="color-black"
+                    primary={
+                      <FormattedMessage
+                        id="contact"
+                        defaultMessage="Əlaqə"
+                      ></FormattedMessage>
+                    }
+                  />
                 </a>
               </ListItem>
             </List>

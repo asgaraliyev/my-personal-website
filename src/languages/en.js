@@ -48,5 +48,6 @@ export const english = {
   typeUsername: "Please type username",
   password: "Password",
   typePassword: "Please type password",
+  informationsIsWrong: "Informations are wrong !",
 
 };

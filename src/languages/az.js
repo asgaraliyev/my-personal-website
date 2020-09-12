@@ -48,5 +48,7 @@ export const azeri = {
   typeUsername: "İstifadəçi adını yazın...",
   password: "Şifrə",
   typePassword: "Şifrəni yazın...",
+  informationsIsWrong: "Daxil edilən məlumatlar yanlışdır !",
+
 
 };
