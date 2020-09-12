@@ -30,13 +30,13 @@ import { useLocation } from "react-router-dom";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Alert from "@material-ui/lab/Alert";
 import { CSSTransition } from "react-transition-group";
 import { FormattedMessage } from "react-intl";
 import resume from "../photos/resume.pdf";
-
+// import { Link } from "react-scroll";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -371,7 +371,8 @@ export default function MiniDrawer(props) {
                 <ListItemIcon style={{ "font-size": "1.5rem" }}>
                   <i class="fas fa-address-card"></i>
                 </ListItemIcon>
-                <a href="#aboutme">
+
+                <a href="#about-me" className="link">
                   <ListItemText
                     className="color-black"
                     primary={
@@ -395,7 +396,7 @@ export default function MiniDrawer(props) {
                 <ListItemIcon style={{ "font-size": "1.5rem" }}>
                   <i class="fas fa-toolbox"></i>
                 </ListItemIcon>
-                <a href="#what-i-do">
+                <a href="#services" className="link">
                   <ListItemText
                     className="color-black"
                     primary={
@@ -411,7 +412,7 @@ export default function MiniDrawer(props) {
                 <ListItemIcon style={{ "font-size": "1.5rem" }}>
                   <i class="fas fa-briefcase"></i>
                 </ListItemIcon>
-                <a href="#portfolio">
+                <a href="#portfolio" className="link">
                   <ListItemText className="color-black" primary={"Portfolio"} />
                 </a>
               </ListItem>
@@ -449,16 +450,16 @@ export default function MiniDrawer(props) {
                 <ListItemIcon style={{ "font-size": "1.5rem" }}>
                   <i class="fas fa-phone-volume"></i>
                 </ListItemIcon>
-                <a href="#contact">
-                  <ListItemText
-                    className="color-black"
-                    primary={
-                      <FormattedMessage
-                        id="contact"
-                        defaultMessage="Əlaqə"
-                      ></FormattedMessage>
-                    }
-                  />
+                <a href="#contact" className="link">
+                <ListItemText
+                  className="color-black"
+                  primary={
+                    <FormattedMessage
+                      id="contact"
+                      defaultMessage="Əlaqə"
+                    ></FormattedMessage>
+                  }
+                />
                 </a>
               </ListItem>
             </List>
@@ -515,12 +516,7 @@ export default function MiniDrawer(props) {
                 <ListItemIcon style={{ "font-size": "1.5rem" }}>
                   <i class="fas fa-user-circle"></i>
                 </ListItemIcon>
-                <Link>
-                  <ListItemText
-                    className="color-black"
-                    primary={"Admin Panel"}
-                  />
-                </Link>
+                <ListItemText className="color-black" primary={"Admin Panel"} />
               </ListItem>
             </List>
           </div>

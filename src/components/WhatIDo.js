@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 export default class WhatIDo extends Component {
   render() {
     return (
-      <section id="what-i-do" className="ftco-section">
+      <section id="services" className="ftco-section">
         <div className="container mt-5">
           <div className="row justify-content-center mb-5 pb-5">
             <div className="col-md-7 text-center heading-section ftco-animate">

@@ -7,7 +7,7 @@ import { FormattedMessage } from "react-intl";
 export default class AboutMe extends Component {
   render() {
     return (
-      <section id="aboutme" className="ftco-section about-section">
+      <section id="about-me" className="ftco-section about-section">
         <div className="container">
           <div className="row d-flex my-5" data-scrollax-parent="true">
             <div

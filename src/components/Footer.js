@@ -35,9 +35,9 @@ export default class Footer extends Component {
                     id="contactWithMe"
                     defaultMessage="Mənimlə əlaqə qurun"
                   ></FormattedMessage></h2>
-                    <p className="h3 email">
+                 
                       <a href="mailto:asgaraliyev2001@gmail.com">asgaraliyev2001@gmail.com</a>
-                    </p>
+                   
                   </div>
                 </div>
               </div>
