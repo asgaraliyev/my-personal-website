@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Skill from "./Skill";
-import profilePhoto from "../photos/profilePhoto.jpg";
+import profilePhoto from "../photos/profilePhoto.webp";
 import resume from "../photos/resume.pdf";
 import { FormattedMessage } from "react-intl";
 

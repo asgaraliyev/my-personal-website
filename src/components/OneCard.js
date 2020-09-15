@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import butaeducation from "../photos/butaeducation.png";
+import butaeducation from "../photos/butaeducation.webp";
 import {
   Card,
   CardHeader,

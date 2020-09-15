@@ -20,7 +20,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import profilePhoto from "../photos/profilePhoto.jpg";
+import profilePhoto from "../photos/profilePhoto.webp";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
