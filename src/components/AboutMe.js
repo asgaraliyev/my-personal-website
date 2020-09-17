@@ -3,9 +3,15 @@ import Skill from "./Skill";
 import profilePhoto from "../photos/profilePhoto.webp";
 import resume from "../photos/resume.pdf";
 import { FormattedMessage } from "react-intl";
-
+import InstagramIcon from "../icons/InstagramIcon";
+import { yellow } from "@material-ui/core/colors";
+console.log(yellow,"yellow");
 export default class AboutMe extends Component {
   render() {
+    const yellowColor = "#fce130";
+    const iconHover = (e) => {
+     console.log("sea");
+    };
     return (
       <section id="about-me" className="ftco-section about-section">
         <div className="container">
@@ -52,18 +58,19 @@ export default class AboutMe extends Component {
                   </p>
                   <ul className="ftco-footer-social list-unstyled mt-4">
                     <li>
-                      <a href="https://wa.me/994555174401">
-                        <span className="icon-whatsapp" />
+                      <a onMouseOver={() => this.iconHover}  href="https://wa.me/994555174401">
+                      <InstagramIcon  color={yellowColor} width="50px" ></InstagramIcon>
                       </a>
                     </li>
                     <li>
                       <a href="https://www.facebook.com/asgar.aliyev.568/">
-                        <span className="icon-facebook" />
+                      <InstagramIcon color={yellowColor} width="50px" ></InstagramIcon>
                       </a>
                     </li>
                     <li>
                       <a href="https://www.instagram.com/asgaraliyev">
-                        <span className="icon-instagram" />
+                      <InstagramIcon color={yellowColor} width="50px" ></InstagramIcon>
+
                       </a>
                     </li>
                   </ul>

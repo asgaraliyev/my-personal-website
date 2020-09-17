@@ -371,8 +371,8 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "font-size": "1.5rem" }}>
-                  <i class="fas fa-address-card"></i>
+                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                  <i className="fas fa-address-card"></i>
                 </ListItemIcon>
 
                 <a href="#about-me" className="link">
@@ -396,8 +396,8 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "font-size": "1.5rem" }}>
-                  <i class="fas fa-toolbox"></i>
+                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                  <i className="fas fa-toolbox"></i>
                 </ListItemIcon>
                 <a href="#services" className="link">
                   <ListItemText
@@ -412,8 +412,8 @@ export default function MiniDrawer(props) {
                 </a>
               </ListItem>
               <ListItem button key={"Portfolio"}>
-                <ListItemIcon style={{ "font-size": "1.5rem" }}>
-                  <i class="fas fa-briefcase"></i>
+                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                  <i className="fas fa-briefcase"></i>
                 </ListItemIcon>
                 <a href="#portfolio" className="link">
                   <ListItemText className="color-black" primary={"Portfolio"} />
@@ -428,8 +428,8 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "font-size": "1.5rem" }}>
-                  <i class="fas fa-rss-square"></i>
+                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                  <i className="fas fa-rss-square"></i>
                 </ListItemIcon>
                 <ListItemText
                   className="color-black"
@@ -450,8 +450,8 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "font-size": "1.5rem" }}>
-                  <i class="fas fa-phone-volume"></i>
+                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                  <i className="fas fa-phone-volume"></i>
                 </ListItemIcon>
                 <a href="#contact" className="link">
                   <ListItemText
@@ -500,8 +500,8 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "font-size": "1.5rem" }}>
-                  <i class="fas fa-file"></i>
+                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                  <i className="fas fa-file"></i>
                 </ListItemIcon>
                 <a href={resume}>
                   <ListItemText
@@ -516,8 +516,8 @@ export default function MiniDrawer(props) {
                 </a>
               </ListItem>
               <ListItem onClick={changeLoginDialog} button key={"Admin Panel"}>
-                <ListItemIcon style={{ "font-size": "1.5rem" }}>
-                  <i class="fas fa-user-circle"></i>
+                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                  <i className="fas fa-user-circle"></i>
                 </ListItemIcon>
                 <ListItemText className="color-black" primary={"Admin Panel"} />
               </ListItem>

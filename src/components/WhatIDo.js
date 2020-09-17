@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
+import WebDeveloperIcon from "../icons/WebDeveloperIcon";
+import SimpleCodingIcon from "../icons/SimpleCodingIcon";
+import MobileAppIcon from "../icons/MobileAppIcon";
+
 export default class WhatIDo extends Component {
   render() {
+    const yellowColor = "#fce130";
     return (
       <section id="services" className="ftco-section">
         <div className="container mt-5">
@@ -25,7 +30,10 @@ export default class WhatIDo extends Component {
             <div className="col-md-4 d-flex align-self-stretch ftco-animate">
               <div className="media block-6 services p-3 py-4 d-block text-center">
                 <div className="icon mb-3">
-                  <span className="icon-layers" />
+                <MobileAppIcon
+                    color={yellowColor}
+                    width="100px"
+                  ></MobileAppIcon>
                 </div>
                 <div className="media-body">
                   <h3 className="heading">IOS/Android Developer</h3>
@@ -36,7 +44,10 @@ export default class WhatIDo extends Component {
             <div className="col-md-4 d-flex align-self-stretch ftco-animate">
               <div className="media block-6 services p-3 py-4 d-block text-center">
                 <div className="icon mb-3">
-                  <span className="icon-gears" />
+                  <SimpleCodingIcon
+                    color={yellowColor}
+                    width="100px"
+                  ></SimpleCodingIcon>
                 </div>
                 <div className="media-body">
                   <h3 className="heading">Automation</h3>
@@ -48,7 +59,10 @@ export default class WhatIDo extends Component {
             <div className="col-md-4 d-flex align-self-stretch ftco-animate">
               <div className="media block-6 services p-3 py-4 d-block text-center">
                 <div className="icon mb-3">
-                  <span className="icon-code" />
+                  <WebDeveloperIcon
+                    color={yellowColor}
+                    width="100px"
+                  ></WebDeveloperIcon>
                 </div>
                 <div className="media-body">
                   <h3 className="heading">Web Developer</h3>
