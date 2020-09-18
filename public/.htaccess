@@ -1,0 +1,6 @@
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^aliyevasgar.herokuapp.com/[nc]
+RewriteRule ^(.*)$ http://www.aliyevasgar.herokuapp.com//$1 [r=301,nc]
+ 
