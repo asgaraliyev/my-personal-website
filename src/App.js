@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import "./css/animate.css";
+import "./css/owl.carousel.min.css";
 import MiniDrawer from "./components/Drawer";
 import VisitorPage from "./VisitorPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -14,8 +16,8 @@ function App() {
           <div id="progress-bar" className="KW_progressBar"></div>
         </div>
         <div id="colorlib-page">
-            <Route path="/" exact component={VisitorPage}></Route>
-            <Route path="/admin-panel"  component={adminPanel}></Route>
+          <Route path="/" exact component={VisitorPage}></Route>
+          <Route path="/admin-panel" component={adminPanel}></Route>
           <div id="ftco-loader" className="show fullscreen">
             <svg className="circular" width="48px" height="48px">
               <circle
