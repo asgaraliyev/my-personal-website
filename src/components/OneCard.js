@@ -81,7 +81,7 @@ export default class OneCard extends Component {
               <Typography variant="body2"  className="work-content" component="p">
                 {work.workContent}
                 <br></br>
-               <a  style={{color:"black"}} href="http://www.butaeducation.com/" target="_blank">www.butaeducation.com</a>
+               <a  style={{color:"black"}} href="http://www.butaeducation.com/" target="_blank" rel="noopener noreferrer">www.butaeducation.com</a>
               </Typography>
             </CardContent>
             <CardActions disableSpacing>

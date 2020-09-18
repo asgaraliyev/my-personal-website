@@ -5,13 +5,12 @@ import resume from "../photos/resume.pdf";
 import { FormattedMessage } from "react-intl";
 import InstagramIcon from "../icons/InstagramIcon";
 import { yellow } from "@material-ui/core/colors";
-console.log(yellow,"yellow");
+import FacebookIcon from "../icons/FacebookIcon";
+import WhatsappIcon from "../icons/WhatsappIcon";
 export default class AboutMe extends Component {
   render() {
     const yellowColor = "#fce130";
-    const iconHover = (e) => {
-     console.log("sea");
-    };
+    
     return (
       <section id="about-me" className="ftco-section about-section">
         <div className="container">
@@ -58,19 +57,33 @@ export default class AboutMe extends Component {
                   </p>
                   <ul className="ftco-footer-social list-unstyled mt-4">
                     <li>
-                      <a onMouseOver={() => this.iconHover}  href="https://wa.me/994555174401">
-                      <InstagramIcon  color={yellowColor} width="50px" ></InstagramIcon>
+                      <a
+                        onMouseOver={() => this.iconHover}
+                        href="https://wa.me/994555174401"
+                      >
+                        <WhatsappIcon
+                          nameOfClass="social-icon"
+                          color={yellowColor}
+                          width="50px"
+                        ></WhatsappIcon>
                       </a>
                     </li>
                     <li>
                       <a href="https://www.facebook.com/asgar.aliyev.568/">
-                      <InstagramIcon color={yellowColor} width="50px" ></InstagramIcon>
+                        <FacebookIcon
+                          nameOfClass="social-icon"
+                          color={yellowColor}
+                          width="50px"
+                        ></FacebookIcon>
                       </a>
                     </li>
                     <li>
                       <a href="https://www.instagram.com/asgaraliyev">
-                      <InstagramIcon color={yellowColor} width="50px" ></InstagramIcon>
-
+                        <InstagramIcon
+                          nameOfClass="social-icon"
+                          color={yellowColor}
+                          width="50px"
+                        ></InstagramIcon>
                       </a>
                     </li>
                   </ul>
@@ -108,7 +121,7 @@ export default class AboutMe extends Component {
           </div>
           <div className="row d-flex justify-content-end mt-5">
             <div className="col-md-10">
-              <div className="profile ftco-animate">
+              {/* <div className="profile ftco-animate">
                 <div className="row my-5">
                   <div className="col-md-6">
                     <p>
@@ -152,7 +165,7 @@ export default class AboutMe extends Component {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="exp mt-5 ftco-animate">
                 <h2 className="mb-4">
                   <FormattedMessage
@@ -163,7 +176,6 @@ export default class AboutMe extends Component {
                 <div className="exp-wrap py-4">
                   <div className="desc">
                     <h4 className="seven-rem">
-                      {" "}
                       Web Developer <span> - Buta Education</span>{" "}
                     </h4>
                   </div>

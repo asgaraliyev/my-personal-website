@@ -314,3 +314,30 @@ body {
     opacity: 0
   }
 }
+.social-icon{
+  padding: 10px;
+  border-radius: 10px;
+  background: rgb(36, 36, 36);
+  box-shadow: 0px 0px 10px $black;
+  &:hover{
+    width: 100%;
+    transition: 0.5s linear ;
+    padding: 10px;
+    transform: rotate(360deg);
+    border-radius: 50%;
+  }
+}
+.footer-icons{
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  &:hover{
+    transition: 0.5s linear ;
+    transform: translate(-50%,-50%) rotate(360deg);
+
+    
+
+  }
+}

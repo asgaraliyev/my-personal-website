@@ -32,7 +32,6 @@ export const english = {
   allRightsReserved: "All rights reserved",
   aboutMeForDrawer: "About Me",
   myServicesForDrawer: "My Services",
-  myServicesForDrawer: "My Services",
   blogs: "Blogs",
   contact: "Contact",
   changeLang: "Change Language",

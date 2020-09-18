@@ -144,7 +144,7 @@ export default function MiniDrawer(props) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
   const submitAdminLogin = async (e) => {
-    if (username == "esger2048" && password == "esger2048") {
+    if (username === "esger2048" && password === "esger2048") {
       changeLoginDialog();
     } else {
       chnageLoginAlert(true);
@@ -371,7 +371,7 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                <ListItemIcon style={{ fontSize: "1.5rem" }}>
                   <i className="fas fa-address-card"></i>
                 </ListItemIcon>
 
@@ -396,7 +396,7 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                <ListItemIcon style={{ fontSize: "1.5rem" }}>
                   <i className="fas fa-toolbox"></i>
                 </ListItemIcon>
                 <a href="#services" className="link">
@@ -412,7 +412,7 @@ export default function MiniDrawer(props) {
                 </a>
               </ListItem>
               <ListItem button key={"Portfolio"}>
-                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                <ListItemIcon style={{ fontSize: "1.5rem" }}>
                   <i className="fas fa-briefcase"></i>
                 </ListItemIcon>
                 <a href="#portfolio" className="link">
@@ -428,7 +428,7 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                <ListItemIcon style={{ fontSize: "1.5rem" }}>
                   <i className="fas fa-rss-square"></i>
                 </ListItemIcon>
                 <ListItemText
@@ -450,7 +450,7 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                <ListItemIcon style={{ fontSize: "1.5rem" }}>
                   <i className="fas fa-phone-volume"></i>
                 </ListItemIcon>
                 <a href="#contact" className="link">
@@ -500,7 +500,7 @@ export default function MiniDrawer(props) {
                   ></FormattedMessage>
                 }
               >
-                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                <ListItemIcon style={{ fontSize: "1.5rem" }}>
                   <i className="fas fa-file"></i>
                 </ListItemIcon>
                 <a href={resume}>
@@ -516,7 +516,7 @@ export default function MiniDrawer(props) {
                 </a>
               </ListItem>
               <ListItem onClick={changeLoginDialog} button key={"Admin Panel"}>
-                <ListItemIcon style={{ "fontSize": "1.5rem" }}>
+                <ListItemIcon style={{ fontSize: "1.5rem" }}>
                   <i className="fas fa-user-circle"></i>
                 </ListItemIcon>
                 <ListItemText className="color-black" primary={"Admin Panel"} />
