@@ -49,6 +49,5 @@ export const azeri = {
   password: "Şifrə",
   typePassword: "Şifrəni yazın...",
   informationsIsWrong: "Daxil edilən məlumatlar yanlışdır !",
-
-
+  click_to_see: "Görmək üçün kliklə",
 };

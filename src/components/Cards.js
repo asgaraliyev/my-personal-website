@@ -1,21 +1,20 @@
-import React, { Component } from "react";
-import OneCard from "./OneCard";
-import WorksConsumer from "../Context";
-export default class Cards extends Component {
-  render() {
-    return (
-      <WorksConsumer>
-        {(value) => {
-          const { works } = value;
-          return (
-            <div className=" no-gutters">
-              {works.map((work) => {
-                return <OneCard work={work}> </OneCard>;
-              })}
-            </div>
-          );
-        }}
-      </WorksConsumer>
-    );
-  }
+import React from "react";
+import "./Cards.scss";
+import Card from "./OneCard.js";
+import { useSelector } from "react-redux";
+export default function Cards() {
+  const items = useSelector((state) => state.items);
+  return (
+    <ul id="cards-area">
+      {items && (
+        <>
+          {items.map((card) => {
+            if (card.sys.contentType.sys.id === "portfolio") {
+              return <Card item={card}></Card>;
+            }
+          })}
+        </>
+      )}
+    </ul>
+  );
 }

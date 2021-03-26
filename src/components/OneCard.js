@@ -1,97 +1,52 @@
-import React, { Component } from "react";
-import butaeducation from "../photos/butaeducation.webp";
-import {
-  Card,
-  CardHeader,
-  Avatar,
-  IconButton,
-  CardMedia,
-  CardContent,
-  Typography,
-  CardActions,
-} from "@material-ui/core";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-
-export default class OneCard extends Component {
-  render() {
-    const themeColors = createMuiTheme({
-      palette: {
-        common: {
-          white: "#fce130",
-        },
-        background: {
-          paper: "#fce130",
-        },
-        text: {
-          primary: "#000",
-        },
-        primary: {
-          main: "#fce130",
-          light: "#fce130",
-          dark: "#fce130",
-        },
-        secondary: {
-          main: "#fce130",
-          light: "#fce130",
-          dark: "#fce130",
-        },
-      },
+import React, { useState, useEffect } from "react";
+import { CSSTransition } from "react-transition-group";
+import { FormattedMessage } from "react-intl";
+import client from "../config/Contentful";
+export default function OneCard({ item }) {
+  const [isVisible, setVisible] = useState(false);
+  const [entry, setEntry] = useState(null);
+  useEffect(() => {
+    client.getEntry(item.sys.id).then((entry) => {
+      console.log(entry);
+      
+      setEntry(entry.fields);
     });
-    const { work } = this.props;
+  }, []);
+  console.log(entry, "entry");
+  return (
+    <li
+      className="one-card"
+      onMouseOver={() => {
+        setVisible(true);
+      }}
+      onMouseLeave={() => {
+        setVisible(false);
+      }}
+    >
+      {entry && (
+        <a href={entry.websiteLink}>
+          <div className="main">
+            <div className="filter"></div>
+            <CSSTransition in={isVisible} timeout={1000} classNames="my-node">
+              <div className="details">
+                <div className="main-details">
+                  <FormattedMessage
+                    id="click_to_see"
+                    defaultMessage="Görmək üçün kliklə"
+                  ></FormattedMessage>
+                  <h4>{entry.websiteName}</h4>
+                </div>
+              </div>
+            </CSSTransition>
 
-    return (
-      <MuiThemeProvider theme={themeColors}>
-        <div
-          id="work-card"
-          className="block-3 d-md-flex ftco-animate work-card"
-          data-scrollax-parent="true"
-        >
-          <Card
-            style={{
-              margin: "10px  0px",
-            }}
-          >
-            <CardHeader
-              avatar={
-                <Avatar
-                  className="work-avatar"
-                  aria-label="recipe"
-                  src={work.photo}
-                ></Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title={work.employer}
-              className="work-name"
-              subheader={work.time}
-            />
-            <CardMedia
-              className="work-photo"
-              style={{
-                backgroundImage: `url(${butaeducation})`,
-                width: "100%",
-              }}
-              title={work.employer}
-            />
-            <CardContent>
-              <Typography variant="body2"  className="work-content" component="p">
-                {work.workContent}
-                <br></br>
-               <a  style={{color:"black"}} href="http://www.butaeducation.com/" target="_blank" rel="noopener noreferrer">www.butaeducation.com</a>
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites"></IconButton>
-              <IconButton aria-label="share"></IconButton>
-              <IconButton aria-label="show more"></IconButton>
-            </CardActions>
-          </Card>
-        </div>
-      </MuiThemeProvider>
-    );
-  }
+            {entry.websitePhoto.fields.file.url != null ? (
+              <img src={entry.websitePhoto.fields.file.url}></img>
+            ) : (
+              <h1>something went wrong</h1>
+            )}
+          </div>
+        </a>
+      )}
+    </li>
+  );
 }

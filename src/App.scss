@@ -1,9 +1,6 @@
-$white: #fff;
-$black: #121212;
-$primary: #fce130;
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-@import 'bootstrap/bootstrap';
-@import 'bootstrap/variables';
+@import 'bootstrap/bootstrap.scss';
+@import 'bootstrap/variables.scss';
 $font-primary: 'Poppins',
 Arial,
 sans-serif;
@@ -12,6 +9,13 @@ $white: #fff;
 $black: #121212;
 $primary: #fce130;
 $transYellow:#fce13075;
+
+
+
+
+.center {
+  justify-content: center;
+}
 
 html {
   // overflow-x: hidden;
@@ -40,7 +44,9 @@ body {
   font-weight: 400;
   color: darken($white, 45%);
   position: relative;
-  background: $black !important;
+  background-attachment: fixed !important;
+  background: url("./photos/bodyBackground.webp");
+  background-size: 550px !important;
 
   &:after {
     -webkit-animation: roll-in-blurred-right 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
@@ -2623,11 +2629,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: url("./photos/bodyBackground.webp") !important;
-  background-size: 550px !important;
 
-}
 
 .work-card {
   .MuiPaper-root {

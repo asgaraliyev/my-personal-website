@@ -26,8 +26,8 @@ export default class WhatIDo extends Component {
               </h2>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-4 d-flex align-self-stretch ftco-animate">
+          <div className="row center">
+            {/* <div className="col-md-4 d-flex align-self-stretch ftco-animate">
               <div className="media block-6 services p-3 py-4 d-block text-center">
                 <div className="icon mb-3">
                 <MobileAppIcon
@@ -40,7 +40,7 @@ export default class WhatIDo extends Component {
                   <h3 className="heading">Mobil UI/UX Design</h3>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="col-md-4 d-flex align-self-stretch ftco-animate">
               <div className="media block-6 services p-3 py-4 d-block text-center">
                 <div className="icon mb-3">

@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import "./css/animate.css";
 import "./css/owl.carousel.min.css";
 import MiniDrawer from "./components/Drawer";

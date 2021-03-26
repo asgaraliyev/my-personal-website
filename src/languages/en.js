@@ -48,5 +48,5 @@ export const english = {
   password: "Password",
   typePassword: "Please type password",
   informationsIsWrong: "Informations are wrong !",
-
+  click_to_see: "Click to see",
 };

@@ -1,28 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { WorksProvider } from "./Context";
 import { IntlProvider } from "react-intl";
 import { azeri } from "./languages/az";
 import { english } from "./languages/en";
-const local=navigator.language;
+import { Provider } from "react-redux";
+import store from "./redux";
+const local = navigator.language;
 let lang;
-if (localStorage.getItem("lang")=="English"){
-  lang=english
-}else{
-  lang=azeri
+if (localStorage.getItem("lang") == "English") {
+  lang = english;
+} else {
+  lang = azeri;
 }
 
 ReactDOM.render(
- <IntlProvider locale={local} messages={lang}>
-    <WorksProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </WorksProvider>
- </IntlProvider>,
+  <Provider store={store}>
+    <IntlProvider locale={local} messages={lang}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </IntlProvider>
+  </Provider>,
   document.getElementById("root")
 );
 

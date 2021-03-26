@@ -7,10 +7,11 @@ import InstagramIcon from "../icons/InstagramIcon";
 import { yellow } from "@material-ui/core/colors";
 import FacebookIcon from "../icons/FacebookIcon";
 import WhatsappIcon from "../icons/WhatsappIcon";
+import Skills from "./Skills";
 export default class AboutMe extends Component {
   render() {
     const yellowColor = "#fce130";
-    
+
     return (
       <section id="about-me" className="ftco-section about-section">
         <div className="container">
@@ -219,20 +220,7 @@ export default class AboutMe extends Component {
               </div>
             </div>
           </div>
-          <div id="skills" className="row mt-5 flex-column ftco-animate">
-            <div className="col-md-8">
-              <h2 className="mb-4">
-                <FormattedMessage
-                  id="mySkills"
-                  defaultMessage="My Skills"
-                ></FormattedMessage>
-              </h2>
-            </div>
-            <Skill name="HTML/SCSS" progress={90}></Skill>
-            <Skill name="OpenCV/Flask/Selenium/Bs4" progress={80}></Skill>
-            <Skill name="Jquery/ES6/AJAX/JSON" progress={75}></Skill>
-            <Skill name="ReactJS/Redux" progress={70}></Skill>
-          </div>
+          <Skills></Skills>
         </div>
       </section>
     );
